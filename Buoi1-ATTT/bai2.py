@@ -1,4 +1,5 @@
-#Viết chương trình tìm giá trị lớn nhất trong 3 số
+#Đề bài: Viết chương trình tìm giá trị lớn nhất trong 3 số
+
 import math
 
 a = float(input("Nhập vào số a: "))
