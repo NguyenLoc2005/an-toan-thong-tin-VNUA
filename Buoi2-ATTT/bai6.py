@@ -1,4 +1,5 @@
 #Giải bài toán xếp ba lô
+
 n=int(input("Nhập vào số lượng của giá trị của vecto siêu tăng: "))
 vec_to = []
 dem=0
