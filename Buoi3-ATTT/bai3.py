@@ -3,6 +3,7 @@
 #Mã hóa và giải mã El-Gamal
 #Tạo khóa
 def tim_nghich_dao(a3,b3):
+  moudle = a3
   a1=1
   a2=0
   b1=0
@@ -18,6 +19,8 @@ def tim_nghich_dao(a3,b3):
     q=a3//b3
     r3=a3-b3*q
     r2=a2-b2*q
+  if r2<0:
+    r2 = r2 + moudle
   return r2
 p = int(input("Nhập p: "))
 g = int(input("Nhập g: "))

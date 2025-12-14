@@ -17,8 +17,8 @@ def tim_nghich_dao(a3,b3):
     q=a3//b3
     r3=a3-b3*q
     r2=a2-b2*q
-    if r2<0:
-      r2=r2+moudle
+  if r2<0:
+    r2=r2+moudle
   return r2
 
 

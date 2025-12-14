@@ -1,4 +1,5 @@
 #Bai 1
+
 x = int(input("Nhập vào x: "))
 la_so_nguyen_to = False
 for i in range(2,x):
