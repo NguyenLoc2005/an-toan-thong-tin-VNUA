@@ -1,13 +1,17 @@
-#Bai 1
+#Số nguyên tố
 
 x = int(input("Nhập vào x: "))
-la_so_nguyen_to = False
-for i in range(2,x):
-  if x%i==0:
-    la_so_nguyen_to = False
+
+if x < 2:
     print(x, "không là số nguyên tố")
-    break
-  else:
+else:
     la_so_nguyen_to = True
-if la_so_nguyen_to==True:
-  print(x, "là số nguyên tố")
+    for i in range(2, x):
+        if x % i == 0:
+            la_so_nguyen_to = False
+            break
+
+    if la_so_nguyen_to:
+        print(x, "là số nguyên tố")
+    else:
+        print(x, "không là số nguyên tố")

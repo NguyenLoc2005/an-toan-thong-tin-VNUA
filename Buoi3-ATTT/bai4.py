@@ -1,5 +1,5 @@
-#Bài 4
 #Chữ ký & RSA
+
 def tim_nghich_dao(a3,b3):
   moudle = a3
   a1=1
@@ -18,25 +18,30 @@ def tim_nghich_dao(a3,b3):
     r3=a3-b3*q
     r2=a2-b2*q
   if r2<0:
-    r2=r2+moudle
+    r2 = r2 + moudle
   return r2
 
+def chu_ky_rsa():
+  p=int(input("Nhập vào p: "))
+  q=int(input("Nhập vào q: "))
+  e=int(input("Nhập vào e: "))
+  n=p*q
+  m=(p-1)*(q-1)
+  d=tim_nghich_dao(m,e)
 
-p = int(input("Nhập vào p: "))
-q = int(input("Nhập vào q: "))
-e = int(input("Nhập vào e: "))
-n=p*q
-m=(p-1)*(q-1)
-d = tim_nghich_dao(m,e)
-print("Khóa công khai là: ("+str(e)+","+str(n)+")")
-print("Khóa mật là: (" +str(d)+","+str(p)+","+str(q)+")")
-#Tạo chữ ký
-x = int(input("Nhập X: "))
-chu_ky= x**d%n
-print("Thông điệp gửi đi "+str(x)+"||"+str(chu_ky))
-#Xác minh
-#x=int(input("Nhập vào X: "))
-#e=int(input("Nhập vào e: "))
-#n=int(input("Nhập vào n: "))
-#if x==y**e%n:
-  #print("Chữ ký hợp lệ")
+  print("Khóa công khai: (", e, ",", n, ")")
+  print("Khóa bí mật: (", d, ",", p, ",", q, ")")
+
+  #Tạo chữ ký điện tử
+  x = int(input("Cho bản rõ X: "))
+  print("sig(x)=",(x**d)%n)
+  print("Thông điệp gửi đi "+str(x)+"||"+str((x**d)%n))
+  print("Xác minh chữ ký")
+  y = int(input("Cho Y: "))
+  if (y**e)%n == x:
+    print("Đúng chữ ký")
+  else:
+    print("Sai chữ ký")
+
+chu_ky_rsa()
+

@@ -1,3 +1,5 @@
+#Chữ kí El-Gamal
+
 def tim_nghich_dao(a3,b3):
   moudle = a3
   a1=1
@@ -18,23 +20,28 @@ def tim_nghich_dao(a3,b3):
     if r2<0:
       r2=r2+moudle
   return r2
-p = int(input("Nhập p: "))
-a = int(input("Nhập a: "))
-x = int(input("Nhập x: "))
-k = int(input("Nhập k: "))
-y=a**x%p
-print("Kp: ("+str(p)+","+str(a)+","+str(y)+")")
-print("Ks: "+str(x))
-r=a**k%p
-k_nghich_dao = tim_nghich_dao(p-1,k)
-X=int(input("Nhập vào X: "))
-s=k_nghich_dao*(X-x*r)%10
-print("Chữ kí là: "+str(X)+"|"+"("+str(r)+","+str(s)+")")
-#Xác minh chữ ký
-#y=int(input("Nhập vào y: "))
-#r=int(input("Nhập vào r: "))
-#p=int(input("Nhập vào p: "))
-#s=int(input("Nhập vào s: "))
-#a=int(input("Nhập vào a: "))
-#if (y**r)*(r**s)%p == a**x %p:
-  #print("Chữ ký hợp lệ")
+
+def chu_ky_el_gamal():
+  p = int(input("Nhập p: "))
+  a = int(input("Nhập a: "))
+  x = int(input("Nhập x: "))
+  k = int(input("Nhập k: "))
+  y=a**x%p
+  print("Kp: ("+str(p)+","+str(a)+","+str(y)+")")
+  print("Ks: "+str(x))
+  
+  k_nghich_dao = tim_nghich_dao(p-1,k)
+  X=int(input("Nhập vào X: "))
+  r=a**k%p
+  s=k_nghich_dao*(X-x*r)%(p-1)
+  print("Chữ kí sig ("+str(X)+","+str(k)+") = ("+str(r)+","+str(s)+")")
+  print("Văn bản gửi đi X||(r,s) = "+str(X)+"||("+str(r)+","+str(s)+")")
+
+  #Xác minh
+  X1=int(input("Nhập vào X: "))
+  r1=int(input("Nhập vào r: "))
+  s1=int(input("Nhập vào s: "))
+  if (a**x)%p == (y**r1)*(r1**s1):
+    print("Chữ ký hợp lệ")
+
+chu_ky_el_gamal()

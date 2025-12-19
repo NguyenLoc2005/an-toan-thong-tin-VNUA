@@ -1,6 +1,6 @@
 #Viết hàm mã hóa và giải mã Vigenere
 
-print("Mã hóa vigenere")
+#Mã hóa Vigenere
 def ma_hoa_vigenere():
     ban_ro = input("Nhập vào bản rõ: ")
     khoa = input("Nhập vào khóa: ")
@@ -27,9 +27,9 @@ def ma_hoa_vigenere():
             ban_ma += ky_tu
 
     return ban_ma
-print(ma_hoa_vigenere())
+ma_hoa_vigenere()
 
-print("Giải mã vigenere")
+#Giải mã Vigenere
 def giai_ma_vigenere():
     ban_ma = input("Nhập vào bản mã: ")
     khoa = input("Nhập vào khóa: ")
@@ -55,3 +55,4 @@ def giai_ma_vigenere():
             ban_ro += ky_tu
 
     return ban_ro
+ma_hoa_vigenere()

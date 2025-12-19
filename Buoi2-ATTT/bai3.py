@@ -1,6 +1,6 @@
 #Viết hàm mã hóa và giải mã Cesar
 
-print("Mã hóa cesar")
+#Mã hóa Cesar
 def ma_hoa_cesar():
     ban_ma = ""
     ban_ro = input("Nhập vào bản rõ: ")
@@ -18,9 +18,10 @@ def ma_hoa_cesar():
         else:
             ban_ma += ky_tu       
     return ban_ma
-print(ma_hoa_cesar())
 
-print("Giải mã cesar")
+ma_hoa_cesar()
+
+#Giải mã Cesar
 def giai_ma_cesar():
     ban_ro = ""
     ban_ma = input("Nhập vào bản mã: ")
@@ -47,6 +48,6 @@ def giai_ma_cesar():
 
         else:
             ban_ro += ky_tu        
-
     return ban_ro
-print(giai_ma_cesar())
+
+giai_ma_cesar()

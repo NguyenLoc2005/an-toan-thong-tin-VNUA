@@ -22,4 +22,4 @@ def tim_nghich_dao_theo_mo_dun_dong_du(b3, a3):
         r2=r2 + moudle
     return r2  
 
-print(tim_nghich_dao_theo_mo_dun_dong_du(17,33))
+tim_nghich_dao_theo_mo_dun_dong_du(17,33)
